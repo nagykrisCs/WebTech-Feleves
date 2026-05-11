@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autókezelő</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Autókezelő</h1>
+            <button id="addCarBtn" class="btn btn-primary">Új autó</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="carListSection">
+            <h2>Autók listája</h2>
+            <div class="car-grid" id="carGrid"></div>
+        </section>
+
+        <div class="modal" id="carModal">
+            <div class="modal-content">
+                <form id="carForm">
+                    <h2 id="formTitle">Új autó</h2>
+                    <div class="error-message" id="formError"></div>
+                    
+                    <div class="form-group">
+                        <label>Márka</label>
+                        <input type="text" id="brand" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Modell</label>
+                        <input type="text" id="model" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tulajdonos</label>
+                        <input type="text" id="owner" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Üzemanyagfogyasztás (l/100km)</label>
+                        <input type="number" step="0.1" id="fuelUse" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gyártás dátuma</label>
+                        <input type="date" id="dayOfCommission" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Elektromos</label>
+                        <select id="electric">
+                            <option value="true">Igen</option>
+                            <option value="false">Nem</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">Mentés</button>
+                    <button type="button" class="btn btn-danger" onclick="closeModal()">Mégse</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
